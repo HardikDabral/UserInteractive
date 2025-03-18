@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 260 75% 60%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -61,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 260 75% 60%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -97,5 +91,36 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%);
+}
+
+.feature-gradient-1 {
+  background: linear-gradient(90deg, #accbee 0%, #e7f0fd 100%);
+}
+
+.feature-gradient-2 {
+  background: linear-gradient(90deg, #d299c2 0%, #fef9d7 100%);
+}
+
+.feature-gradient-3 {
+  background: linear-gradient(90deg, #ee9ca7, #ffdde1);
+}
+
+@layer components {
+  .service-card {
+    @apply relative overflow-hidden rounded-xl p-6 shadow-lg transition-all duration-300 hover:animate-card-hover;
+  }
+  
+  .service-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-brand-purple/10 to-brand-blue/10 opacity-0 transition-opacity duration-300;
+  }
+  
+  .service-card:hover::before {
+    @apply opacity-100;
   }
 }
