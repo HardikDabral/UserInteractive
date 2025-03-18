@@ -1,12 +1,22 @@
 
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Hero = () => {
   return (
     <div className="pt-20 min-h-screen flex flex-col justify-center relative overflow-hidden">
-      {/* Background with gradient */}
+      {/* Background image with gradient overlay */}
       <div className="absolute inset-0 hero-gradient opacity-90 -z-10" />
+      
+      {/* Background image */}
+      <div className="absolute inset-0 -z-20">
+        <img 
+          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
+          alt="Technology background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
       
       {/* Decorative circles */}
       <div className="absolute top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
