@@ -28,7 +28,7 @@ const Hero = () => {
             Get Started
             <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
-          <Button variant="outline" size="lg" className="border-white text-gray hover:bg-white/10 ">
+          <Button variant="outline" size="lg" className="border-white text-gray hover:bg-white/10">
             Learn More
           </Button>
         </div>
